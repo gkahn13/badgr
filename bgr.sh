@@ -6,6 +6,7 @@ echo "roscore starting up..."
 while true; do
     sleep 1
     rostopic list > /dev/null 2>&1
+    # Check the return value of rostopic list. Keep looping until it is zero, indicing roscore is ready
     [[ $? != 0 ]] || break
 done
 
