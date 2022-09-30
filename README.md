@@ -10,6 +10,9 @@ Gregory Kahn, Pieter Abbeel, Sergey Levine
 
 Make sure you have 90GB of space available, [anaconda](https://www.anaconda.com/distribution/) installed, and [ROS](https://www.ros.org/) installed. Our installation was on Ubuntu 16.04 with ROS Kinetic.
 
+Note: [Docker](#docker) is now available as an alternative to the following system installation. This approach is recommended to avoid dealing with deprecated Python packages. 
+
+
 Clone the repository and go into the folder:
 
 ```bash
@@ -34,9 +37,6 @@ unzip BADGR_rosbags.zip
 rm BADGR_rosbags.zip
 cd ..
 ```
-
-Note: [Docker](#docker) is now available as an alternative to the following system installation. This approach is recommended to avoid dealing with deprecated Python packages.
-
 
 Then setup the anaconda environment:
 ```bash
@@ -112,7 +112,7 @@ python scripts/eval.py configs/bumpy_collision_position.py
 
 Docker and the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html) must be installed before proceeding.
 
-In the badgr directory:
+First follow the standard instructions for cloning the repository and downloading the data. In the badgr directory:
 ```
 docker build . -t badgr:1.13.1
 ```
