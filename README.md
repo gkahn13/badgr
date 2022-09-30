@@ -10,7 +10,7 @@ Gregory Kahn, Pieter Abbeel, Sergey Levine
 
 Make sure you have 90GB of space available, [anaconda](https://www.anaconda.com/distribution/) installed, and [ROS](https://www.ros.org/) installed. Our installation was on Ubuntu 16.04 with ROS Kinetic.
 
-Note: [Docker](#docker) is now available as an alternative to the following system installation. This approach is recommended to avoid dealing with deprecated Python packages. 
+Note: [Docker](#docker) is now available as an alternative to the following system installation. This approach is recommended to avoid the hassle of installing deprecated software.
 
 
 Clone the repository and go into the folder:
