@@ -1,0 +1,11 @@
+catkin-pkg==0.4.13
+loguru==0.3.2
+matplotlib
+numpy
+opencv-python==4.1.1.26
+Pillow==6.1.0
+PyYAML==5.1.2
+requests==2.22.0
+rospkg==1.1.10
+tensorflow-gpu==1.13.1
+utm==0.5.0

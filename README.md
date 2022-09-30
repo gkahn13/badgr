@@ -1,4 +1,3 @@
-
 # BADGR: An Autonomous Self-Supervised Learning-Based Navigation System
 
 Gregory Kahn, Pieter Abbeel, Sergey Levine
@@ -10,6 +9,9 @@ Gregory Kahn, Pieter Abbeel, Sergey Levine
 ## Installation
 
 Make sure you have 90GB of space available, [anaconda](https://www.anaconda.com/distribution/) installed, and [ROS](https://www.ros.org/) installed. Our installation was on Ubuntu 16.04 with ROS Kinetic.
+
+Note: [Docker](#docker) is now available as an alternative to the following system installation. This approach is recommended to avoid the hassle of installing deprecated software.
+
 
 Clone the repository and go into the folder:
 
@@ -105,6 +107,19 @@ change the visualizer to show bumpiness by modifying `configs/bumpy_collision_po
 ```bash
 python scripts/eval.py configs/bumpy_collision_position.py
 ```
+
+## Docker
+
+Docker and the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html) must be installed before proceeding.
+
+First follow the standard instructions for cloning the repository and downloading the data. In the badgr directory:
+```
+docker build . -t badgr:1.13.1
+```
+After building follow the training instructions within a badgr container. Make sure to use `python3` instead of `python` A convenience script `badgr_docker` is included which brings up a container with the proper docker options. Change the volume path if badgr is not installed in your home directory.
+
+With a trained model `bgr.sh` can be run to execute the evaluation demo.
+
 
 ## FAQ
 1. If you are having issues with importing OpenCV (e.g., `ImportError: /opt/ros/kinetic/lib/python2.7/dist-packages/cv2.so: undefined symbol: PyCObject_Type`), try the following to have python look for the Python 3 OpenCV first:

@@ -1,0 +1,8 @@
+#! /usr/bin/env sh
+
+xhost +local:root; # for the lazy and reckless http://wiki.ros.org/docker/Tutorials/GUI
+
+# this snippet assumes badgr is in your home directory
+docker run --network host --gpus all --env="DISPLAY" --env="QT_X11_NO_MITSHM=1"  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" -v /home/$USER/badgr:/badgr -it badgr:1.13.1 #bash -i -c "./bgr.sh";
+
+xhost -local:root;
